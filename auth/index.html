@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Iniciar Sesión - GYM Management</title>
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="d-flex align-items-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card p-4">
+                    <!-- 🔗 Enlace al index.html (parte superior izquierda) -->
+                    <div class="text-left mb-3">
+                        <a href="../index.html" class="text-muted">
+                            <i class="fas fa-arrow-left"></i> Volver al inicio
+                        </a>
+                    </div>
+
+                    <div class="text-center mb-4">
+                        <img src="../images/logotipo.png" alt="Logo" width="60">
+                        <h3 class="mt-2">🔐 Iniciar Sesión</h3>
+                    </div>
+
+                    <!-- Formulario de Login -->
+                    <form id="loginForm" class="d-none">
+                        <div class="form-group">
+                            <label>Usuario o Email</label>
+                            <input type="text" class="form-control" id="username" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-sign-in-alt"></i> Ingresar
+                        </button>
+                        <div class="text-center mt-3">
+                            <a href="#" id="showRecoveryLink">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </form>
+
+                    <!-- Formulario de Recuperación -->
+                    <form id="recoveryForm" class="d-none">
+                        <div class="form-group">
+                            <label>Ingresa tu email registrado</label>
+                            <input type="email" class="form-control" id="recoveryEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-block">
+                            <i class="fas fa-paper-plane"></i> Enviar enlace
+                        </button>
+                        <div class="text-center mt-3">
+                            <a href="#" id="showLoginLink">← Volver al login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Librerías -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

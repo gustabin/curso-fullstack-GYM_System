@@ -1,0 +1,98 @@
+<!-- attendances index -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Asistencias - GYM Management</title>
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        table.dataTable tbody td.dtr-control:before {
+            background-color: #28a745;
+            border: 2px solid #28a745;
+            box-shadow: 0 0 3px rgba(40, 167, 69, 0.5);
+        }
+
+        table.dataTable tbody tr.parent td.dtr-control:before {
+            background-color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        table.dataTable tbody td.dtr-control {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        footer .container {
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="text-left mb-3">
+            <a href="../dashboard/index.html" class="text-muted">
+                <i class="fas fa-arrow-left"></i> Volver al dashboard
+            </a>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5><i class="fas fa-sign-in-alt"></i> Registrar Asistencia</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Socio *</label>
+                    <select id="memberSelect" class="form-control" required>
+                        <option value="">-- Seleccione un socio --</option>
+                    </select>
+                </div>
+                <button id="registrarAsistenciaBtn" class="btn btn-success">
+                    <i class="fas fa-check-circle"></i> Registrar Entrada Hoy
+                </button>
+                <div id="mensajeAsistencia" class="mt-2"></div>
+            </div>
+        </div>
+
+        <h2 class="mb-4">📅 Historial de Asistencias</h2>
+        <table id="attendancesTable" class="display nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Socio</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-info text-white text-center py-3 mt-5">
+        <div class="container">
+            <img src="../images/logotipo.png" width="50px">
+            &copy; 2025 StackCodeLab.com | Todos los derechos reservados |
+            <a href="https://stackcodelab.com" class="text-white" target="_blank">
+                Recursos técnicos para profesionales de la tecnología
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="attendances.js"></script>
+</body>
+
+</html>
