@@ -1,9 +1,9 @@
 # 🏋️ Sistema de Gestión para GYM – Curso Full-Stack
 
 **Curso práctico de desarrollo web con HTML, CSS, JavaScript, PHP 8+, MySQL y REST API**  
-**Duración**: 3 meses (36 sesiones de 1 hora)  
+**Duración**: 2 semanas (4 sesiones de 2 horas)  
 **Nivel**: Principiantes absolutos → Intermedio  
-**Instructor**: [Tu nombre / StackCodeLab](https://stackcodelab.com)  
+**Instructor**: [Gustavo Arias / StackCodeLab](https://stackcodelab.com)  
 
 ---
 
