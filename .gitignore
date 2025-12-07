@@ -2,7 +2,7 @@
 .env
 
 # Configuración sensible
-/config/database.php
+#/config/database.php
 
 # Logs y archivos temporales
 *.log
