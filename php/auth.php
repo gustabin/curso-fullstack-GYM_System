@@ -112,12 +112,7 @@ function handlePasswordResetRequest()
     // Configuración de PHPMailer
     // Modo de depuración (true para desarrollo, false para producción)
     define('DEBUG', true);
-    define('SMTP_HOST', 'mx96.hostgator.mx');  // Cambia esto por tu servidor SMTP
-    define('SMTP_PORT', 465);                 // Puerto SMTP (normalmente 587 para TLS, 465 para SSL)
-    define('SMTP_SECURE', 'ssl');             // 'tls' o 'ssl'
     define('SMTP_AUTH', true);
-    define('SMTP_USER', 'soporte@stackcodelab.com');  // Tu dirección de correo electrónico
-    define('SMTP_PASS', '!a^{oZPn2yuX');        // Tu contraseña
 
     // ✉️ ENVIAR EMAIL CON PHPMAILER
     try {
