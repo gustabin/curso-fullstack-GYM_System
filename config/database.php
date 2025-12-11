@@ -5,7 +5,7 @@
 function loadEnv($filePath)
 {
     if (!file_exists($filePath)) {
-        throw new Exception(".env file not found at: $filePath");
+        throw new Exception(".env file  not found at: $filePath");
     }
 
     $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
