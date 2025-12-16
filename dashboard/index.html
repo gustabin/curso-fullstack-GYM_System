@@ -1,0 +1,194 @@
+<!-- dashboard index -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard - GYM Management</title>
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <style>
+        .metric-card {
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        /* Estilos para el botón responsive de DataTables */
+        table.dataTable tbody td.dtr-control:before {
+            background-color: #28a745;
+            border: 2px solid #28a745;
+            box-shadow: 0 0 3px rgba(40, 167, 69, 0.5);
+        }
+
+        table.dataTable tbody tr.parent td.dtr-control:before {
+            background-color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        table.dataTable tbody tr.child ul.dtr-details {
+            display: block;
+            padding-left: 0;
+        }
+
+        table.dataTable tbody tr.child ul.dtr-details>li {
+            border-bottom: 1px solid #e9ecef;
+            padding: 8px 0;
+        }
+
+        table.dataTable tbody td.dtr-control {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        footer .container {
+            font-size: 0.875rem;
+            /* 14px si el base es 16px */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid py-4">
+        <!-- En el menú o barra superior -->
+        <div class="d-flex flex-wrap align-items-center mb-3">
+            <div class="btn-group" role="group" aria-label="menu">
+                <a href="../members/index.html" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fas fa-users"></i> Gestionar Socios
+                </a>
+                <a href="../memberships/index.html" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fas fa-id-card"></i> Membresías
+                </a>
+                <a href="../attendances/index.html" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fas fa-calendar-check"></i> Asistencias
+                </a>
+                <a href="../trainers/index.html" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fas fa-dumbbell"></i> Entrenadores
+                </a>
+                <a href="../payments/index.html" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fas fa-receipt"></i> Pagos
+                </a>
+                <a href="../enrollments/index.html" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fas fa-link"></i> Inscripciones
+                </a>
+            </div>
+
+            <a href="javascript:void(0)" id="logoutBtn" class="btn btn-outline-dark btn-sm ml-auto">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center mb-4">📊 Dashboard del GYM</h2>
+            </div>
+        </div>
+        <!-- Métricas clave -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card metric-card text-white bg-primary">
+                    <div class="card-body text-center">
+                        <h5>Socios Activos</h5>
+                        <h2 id="activeMembers">--</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card metric-card text-white bg-success">
+                    <div class="card-body text-center">
+                        <h5>Asistencias Hoy</h5>
+                        <h2 id="todayAttendance">--</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card metric-card text-white bg-warning">
+                    <div class="card-body text-center">
+                        <h5>Membresías por Vencer</h5>
+                        <h2 id="expiringMemberships">--</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card metric-card text-white bg-info">
+                    <div class="card-body text-center">
+                        <h5>Últimos Pagos</h5>
+                        <h2 id="recentPayments">--</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de últimos pagos -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-receipt"></i> Últimos Pagos Registrados</h5>
+                    </div>
+                    <div class="card-body">
+                        <table id="paymentsTable" class="display nowrap" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>ID Pago</th>
+                                    <th>Socio</th>
+                                    <th>Monto</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Gráfico de asistencias -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-chart-line"></i> Asistencias Últimos 7 Días</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="attendanceChart" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-info text-white text-center py-3 mt-5">
+        <div class="container">
+            <img src="../images/logotipo.png" width="50px">
+            &copy; 2025 StackCodeLab.com | Todos los derechos reservados |
+            <a href="https://stackcodelab.com" class="text-white" target="_blank">
+                Recursos técnicos para profesionales de la tecnología
+            </a>
+        </div>
+    </footer>
+
+    <!-- Librerías -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

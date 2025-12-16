@@ -1,0 +1,9 @@
+# Archivos de entorno
+#.env
+
+# Configuración sensible
+#/config/database.php
+
+# Logs y archivos temporales
+*.log
+error_log
