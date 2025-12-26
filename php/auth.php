@@ -146,7 +146,7 @@ function handlePasswordResetRequest()
         $mail->Body    = "
             <h3>¿Olvidaste tu contraseña?</h3>
             <p>Haz clic en el enlace para restablecerla:</p>
-            <a href='https://stackcodelab.com/gym_system/php/reset-password.php?token=$token' 
+            <a href='https://stackcodelab.com/php/reset-password.php?token=$token' 
                style='padding:10px 20px; background:#007bff; color:white; text-decoration:none; border-radius:5px;'>
                Restablecer contraseña
             </a>
