@@ -1,565 +1,577 @@
 {
-	"info": {
-		"_postman_id": "ece37768-db9d-460b-b1a5-fd4dc8336f32",
-		"name": "Gym_System",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "21204550",
-		"_collection_link": "https://lunar-crater-265013.postman.co/workspace/My-Workspace~504650ee-6f9d-40ba-8c96-1087ffe185b3/collection/21204550-ece37768-db9d-460b-b1a5-fd4dc8336f32?action=share&source=collection_link&creator=21204550"
-	},
-	"item": [
-		{
-			"name": "auth",
-			"item": [
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"username\":\"admin\",\"password\":\"password\"}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost/gym_system/php/auth.php?action=login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"auth.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "login"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logout",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/auth.php?action=logout",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"auth.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "logout"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Ver sesión",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/auth.php?action=check-session",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"auth.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "check-session"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "members",
-			"item": [
-				{
-					"name": "Listar",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/members.php?action=getAll",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"members.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "getAll"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Crear",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "firstName",
-									"value": "German",
-									"type": "text"
-								},
-								{
-									"key": "lastName",
-									"value": "Madrid",
-									"type": "text"
-								},
-								{
-									"key": "dni",
-									"value": "45764321",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "juan@example.com",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "987654321",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost/gym_system/php/members.php?action=create",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"members.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "create"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/members.php?action=getById&id=1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"members.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "getById"
-								},
-								{
-									"key": "id",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Actualizar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "id",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "firstName",
-									"value": "George",
-									"type": "text"
-								},
-								{
-									"key": "lastName",
-									"value": "Gutierrez",
-									"type": "text"
-								},
-								{
-									"key": "dni",
-									"value": "1234567234",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "tabincine@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "345434545",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost/gym_system/php/members.php?action=update",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"members.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "update"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Eliminar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "id",
-									"value": "6",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost/gym_system/php/members.php?action=delete",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"members.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "delete"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "enrollments",
-			"item": [
-				{
-					"name": "Asignar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "member_id",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "membership_id",
-									"value": "1",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost/gym_system/php/enrollments.php?action=assign",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"enrollments.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "assign"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Listar",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/enrollments.php?action=get-all",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"enrollments.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "get-all"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "attendances",
-			"item": [
-				{
-					"name": "Registrar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/attendances.php?action=register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"attendances.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "register"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Listar",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/attendances.php?action=get-all",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"attendances.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "get-all"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Socios activos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost/gym_system/php/attendances.php?action=get-active-members",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"attendances.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "get-active-members"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "payments",
-			"item": [
-				{
-					"name": "Registrar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "mm_id",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "amount",
-									"value": "50.00",
-									"type": "text"
-								},
-								{
-									"key": "payment_method",
-									"value": "efectivo",
-									"type": "text"
-								},
-								{
-									"key": "notes",
-									"value": "Pago enero",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost/gym_system/php/payments.php?action=register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"path": [
-								"gym_system",
-								"php",
-								"payments.php"
-							],
-							"query": [
-								{
-									"key": "action",
-									"value": "register"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Reporte",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "dashboard",
-			"item": [
-				{
-					"name": "Métricas",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Pagos recientes",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Tendencia",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "21d8bd28-f942-4f5f-8e9b-555c3fd42f23",
+    "name": "Gym_System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21204550",
+    "_collection_link": "https://go.postman.co/collection/21204550-21d8bd28-f942-4f5f-8e9b-555c3fd42f23?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\",\"password\":\"password\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/gym_system/php/auth.php?action=login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "auth.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "login"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/auth.php?action=logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "auth.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "logout"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ver sesión",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/auth.php?action=check-session",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "auth.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "check-session"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "members",
+      "item": [
+        {
+          "name": "Listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/members.php?action=getAll",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "members.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "getAll"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "firstName",
+                  "value": "German",
+                  "type": "text"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Madrid",
+                  "type": "text"
+                },
+                {
+                  "key": "dni",
+                  "value": "45764321",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "juan@example.com",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "987654321",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/gym_system/php/members.php?action=create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "members.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "create"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/members.php?action=getById&id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "members.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "getById"
+                },
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "firstName",
+                  "value": "George",
+                  "type": "text"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Gutierrez",
+                  "type": "text"
+                },
+                {
+                  "key": "dni",
+                  "value": "1234567234",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "tabincine@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "345434545",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/gym_system/php/members.php?action=update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "members.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "update"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "id",
+                  "value": "6",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/gym_system/php/members.php?action=delete",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "members.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "delete"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "enrollments",
+      "item": [
+        {
+          "name": "Asignar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "member_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "membership_id",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/gym_system/php/enrollments.php?action=assign",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "enrollments.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "assign"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/enrollments.php?action=get-all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "enrollments.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "get-all"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "attendances",
+      "item": [
+        {
+          "name": "Registrar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/attendances.php?action=register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "attendances.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "register"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/attendances.php?action=get-all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "attendances.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "get-all"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Socios activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/gym_system/php/attendances.php?action=get-active-members",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "attendances.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "get-active-members"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "payments",
+      "item": [
+        {
+          "name": "Registrar",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "mm_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "50.00",
+                  "type": "text"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "efectivo",
+                  "type": "text"
+                },
+                {
+                  "key": "notes",
+                  "value": "Pago enero",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/gym_system/php/payments.php?action=register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "gym_system",
+                "php",
+                "payments.php"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "register"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reporte",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "Métricas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagos recientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tendencia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
